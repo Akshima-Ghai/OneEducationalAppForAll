@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:one_edu_app_for_all/home_page.dart';
 
 void main() {
@@ -15,7 +16,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: home_page(),
+      home: AnimatedSplashScreen(
+          //SplashScreen Function
+          duration: 3000,
+          splash: Image.asset(
+            "assets/images/temporary.png", //Input the path of the image
+            // width, height can be used to alter
+          ),
+          nextScreen: home_page(),
+          splashTransition:
+              SplashTransition.fadeTransition, //type of transition
+          backgroundColor: Colors.green //color
+          ),
     );
   }
 }
