@@ -26,26 +26,26 @@ To start contributing, follow the below guidelines:
 
 **🌟.**  Star🌟 the project to bookmark and appreciate the work.
 
-**0.**  Take a look at the existing [issues](https://github.com/Akshima-Ghai/OneEducationalWebsiteForAll/issues) or create your own issues. Wait for the Issue to be assigned to you after which you can start working on it.
+**0.**  Take a look at the existing [issues](https://github.com/Akshima-Ghai/OneEducationalAppForAll/issues) or create your own issues. Wait for the Issue to be assigned to you after which you can start working on it.
 
-**1.**  Fork [this](https://github.com/Akshima-Ghai/OneEducationalWebsiteForAll) repository.
+**1.**  Fork [this](https://github.com/Akshima-Ghai/OneEducationalAppForAll) repository.
 
 **2.**  Clone your forked copy of the project.
 
 ```
-git clone --depth 1 https://github.com/<your_user_name>/OneEducationalWebsiteForAll.git
+git clone --depth 1 https://github.com/<your_user_name>/OneEducationalAppForAll.git
 ```
 
 **3.** Navigate to the project directory :file_folder: .
 
 ```
-cd OneEducationalWebsiteForAll
+cd OneEducationalAppForAll
 ```
 
 **4.** Add a reference(remote) to the original repository.
 
 ```
-git remote add upstream https://github.com/Akshima-Ghai/OneEducationalWebsiteForAll.git
+git remote add upstream https://github.com/Akshima-Ghai/OneEducationalAppForAll.git
 
 ```
 *5.** Check the remotes for this repository.
@@ -109,13 +109,13 @@ git push -u origin <your_branch_name>
 
 # License 
 <p align="center">
-<a href="https://github.com/Akshima-Ghai/OneEducationalWebsiteForAll/blob/main/LICENSE">
+<a href="https://github.com/Akshima-Ghai/OneEducationalAppForAll/blob/main/LICENSE">
 <img width=35% src="https://media0.giphy.com/media/3ornjXbo3cjqh2BIyY/200.gif"></p>
 <h5 align="center"><b>MIT License</b></a>  
   
 ## Contributors
 <a href="https://github.com/Akshima-Ghai/OneEducationalWebsiteForAll/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Akshima-Ghai/OneEducationalWebsiteForAll" />
+  <img src="https://contrib.rocks/image?repo=Akshima-Ghai/OneEducationalAppForAll" />
 </a>
 
 
