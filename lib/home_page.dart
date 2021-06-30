@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-class home_page extends StatefulWidget {
-  const home_page({Key? key}) : super(key: key);
+// ignore: camel_case_types
+class home extends StatefulWidget {
+  const home({Key? key}) : super(key: key);
 
   @override
-  _home_pageState createState() => _home_pageState();
+  _homeState createState() => _homeState();
 }
 
-class _home_pageState extends State<home_page> {
+// ignore: camel_case_types
+class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             "assets/images/temporary.png", //Input the path of the image
             // width, height can be used to alter
           ),
-          nextScreen: home_page(),
+          nextScreen: home(),
           splashTransition:
               SplashTransition.fadeTransition, //type of transition
           backgroundColor: Colors.green //color
