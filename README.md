@@ -7,15 +7,20 @@
 - Flutter
 - FireBase
 
+![Devincept](https://user-images.githubusercontent.com/56088741/123548852-1ef59d00-d784-11eb-8e39-255e0c3e97d5.gif)
+ DevIncept is an 30 day open source program helping the student community learn and contribute in various open source project under the guidance of skilled mentors and project admins.
 
-## Steps To Contribute
-- Star the Repository 
-- Fork the project in your github acccount
-- Create a new branch with relevent name to the issue
-- Made changes in the branch
-- Commit changes in the branch
-- Make PR to the upstream Repo
+## How to get started❓
 
+You can refer to the following articles on the basics of Git and Github and also contact the Project Mentors, in case you are stuck:
+
+- If you don't have git on your machine, [install](https://help.github.com/articles/set-up-git/) it.
+- [Watch this video to get started, if you have no clue about open source](https://youtu.be/SL5KKdmvJ1U)
+- [Forking a Repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo)
+- [Cloning a Repo](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository)
+- [How to create an Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-issues/creating-an-issue)
+- [How to create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
+- [Getting started with Git and GitHub](https://towardsdatascience.com/getting-started-with-git-and-github-6fcd0f2d4ac6)
 
 
 ## Contribution Guidelines 🏗
