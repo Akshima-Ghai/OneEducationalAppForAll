@@ -7,15 +7,8 @@
 - Flutter
 - FireBase
 
-
-## Steps To Contribute
-- Star the Repository 
-- Fork the project in your github acccount
-- Create a new branch with relevent name to the issue
-- Made changes in the branch
-- Commit changes in the branch
-- Make PR to the upstream Repo
-
+![Devincept](https://user-images.githubusercontent.com/56088741/123548852-1ef59d00-d784-11eb-8e39-255e0c3e97d5.gif)
+ DevIncept is an 30 day open source program helping the student community learn and contribute in various open source project under the guidance of skilled mentors and project admins.
 
 
 ## Contribution Guidelines 🏗
