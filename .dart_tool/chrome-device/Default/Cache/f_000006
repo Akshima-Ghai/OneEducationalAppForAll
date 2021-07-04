@@ -1,0 +1,990 @@
+define(['dart_sdk', 'packages/flutter/src/animation/curves.dart', 'packages/page_transition/src/enum.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/widgets/implicit_animations.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/material/colors.dart', 'packages/page_transition/src/page_transition.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/painting/decoration.dart', 'packages/flutter/src/material/icon_button.dart'], (function load__packages__animated_splash_screen__animated_splash_screen_dart(dart_sdk, packages__flutter__src__animation__curves$46dart, packages__page_transition__src__enum$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__widgets__implicit_animations$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__material__colors$46dart, packages__page_transition__src__page_transition$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__painting__decoration$46dart, packages__flutter__src__material__icon_button$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const async = dart_sdk.async;
+  const _internal = dart_sdk._internal;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const $enum = packages__page_transition__src__enum$46dart.src__enum;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const implicit_animations = packages__flutter__src__widgets__implicit_animations$46dart.src__widgets__implicit_animations;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const page_transition = packages__page_transition__src__page_transition$46dart.src__page_transition;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const decoration = packages__flutter__src__painting__decoration$46dart.src__painting__decoration;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  var animated_splash_screen = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var $contains = dartx.contains;
+  var $replaceAll = dartx.replaceAll;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    TweenOfOffset: () => (T.TweenOfOffset = dart.constFn(tween.Tween$(ui.Offset)))(),
+    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))(),
+    VoidToObject: () => (T.VoidToObject = dart.constFn(dart.fnType(core.Object, [])))(),
+    voidTodynamic: () => (T.voidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [dart.void])))(),
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    __ToWidget: () => (T.__ToWidget = dart.constFn(dart.fnType(framework.Widget, [], {}, {child: framework.Widget})))(),
+    VoidToImage: () => (T.VoidToImage = dart.constFn(dart.gFnType(Widget => [image.Image, []], Widget => [T.ObjectN()])))(),
+    IconDataN: () => (T.IconDataN = dart.constFn(dart.nullable(icon_data.IconData)))(),
+    WidgetN: () => (T.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
+    AnimationOfOffset: () => (T.AnimationOfOffset = dart.constFn(animation.Animation$(ui.Offset)))(),
+    AnimationOfdouble: () => (T.AnimationOfdouble = dart.constFn(animation.Animation$(core.double)))(),
+    AnimationOfDecoration: () => (T.AnimationOfDecoration = dart.constFn(animation.Animation$(decoration.Decoration)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: animated_splash_screen._splashType.prototype,
+        [_name$]: "_splashType.simpleSplash",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: animated_splash_screen._splashType.prototype,
+        [_name$]: "_splashType.backgroundScreenReturn",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], animated_splash_screen._splashType);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: animated_splash_screen.SplashTransition.prototype,
+        [_name$]: "SplashTransition.slideTransition",
+        index: 0
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: animated_splash_screen.SplashTransition.prototype,
+        [_name$]: "SplashTransition.scaleTransition",
+        index: 1
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: animated_splash_screen.SplashTransition.prototype,
+        [_name$]: "SplashTransition.rotationTransition",
+        index: 2
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: animated_splash_screen.SplashTransition.prototype,
+        [_name$]: "SplashTransition.sizeTransition",
+        index: 3
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: animated_splash_screen.SplashTransition.prototype,
+        [_name$]: "SplashTransition.fadeTransition",
+        index: 4
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: animated_splash_screen.SplashTransition.prototype,
+        [_name$]: "SplashTransition.decoratedBoxTransition",
+        index: 5
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], animated_splash_screen.SplashTransition);
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: curves.Cubic.prototype,
+        [Cubic_d]: 0.335,
+        [Cubic_c]: 0.98,
+        [Cubic_b]: 0.04,
+        [Cubic_a]: 0.6
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 29,
+        [_Location_line]: 227,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 227,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "src",
+        [_Location_column]: 51,
+        [_Location_line]: 237,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17], widget_inspector._Location);
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 40,
+        [_Location_line]: 236,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 48,
+        [_Location_line]: 239,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20], widget_inspector._Location);
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 40,
+        [_Location_line]: 239,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 34,
+        [_Location_line]: 242,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 42,
+        [_Location_line]: 242,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], widget_inspector._Location);
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 242,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 17,
+        [_Location_line]: 232,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 233,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27, C[28] || CT.C28], widget_inspector._Location);
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 231,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "position",
+        [_Location_column]: 13,
+        [_Location_line]: 251,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 58,
+        [_Location_line]: 251,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32], widget_inspector._Location);
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 250,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scale",
+        [_Location_column]: 13,
+        [_Location_line]: 256,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 55,
+        [_Location_line]: 256,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.constList([C[35] || CT.C35, C[36] || CT.C36], widget_inspector._Location);
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[34] || CT.C34,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 255,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "turns",
+        [_Location_column]: 13,
+        [_Location_line]: 261,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 55,
+        [_Location_line]: 261,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40], widget_inspector._Location);
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 260,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "sizeFactor",
+        [_Location_column]: 13,
+        [_Location_line]: 266,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 60,
+        [_Location_line]: 266,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43, C[44] || CT.C44], widget_inspector._Location);
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 265,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "opacity",
+        [_Location_column]: 13,
+        [_Location_line]: 271,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 57,
+        [_Location_line]: 271,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.constList([C[47] || CT.C47, C[48] || CT.C48], widget_inspector._Location);
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[46] || CT.C46,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 270,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 13,
+        [_Location_line]: 276,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 64,
+        [_Location_line]: 276,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51, C[52] || CT.C52], widget_inspector._Location);
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 275,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "opacity",
+        [_Location_column]: 13,
+        [_Location_line]: 281,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 57,
+        [_Location_line]: 281,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.constList([C[55] || CT.C55, C[56] || CT.C56], widget_inspector._Location);
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[54] || CT.C54,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 280,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 21,
+        [_Location_line]: 290,
+        [_Location_file]: null
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 57,
+        [_Location_line]: 290,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.constList([C[59] || CT.C59, C[60] || CT.C60], widget_inspector._Location);
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[58] || CT.C58,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 290,
+        [_Location_file]: "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+      });
+    }
+  }, false);
+  var C = Array(61).fill(void 0);
+  var I = [
+    "package:animated_splash_screen/animated_splash_screen.dart",
+    "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.1.0/lib/animated_splash_screen.dart"
+  ];
+  var _name$ = dart.privateName(animated_splash_screen, "_name");
+  animated_splash_screen._splashType = class _splashType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (animated_splash_screen._splashType.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = animated_splash_screen._splashType.prototype;
+  dart.addTypeTests(animated_splash_screen._splashType);
+  dart.addTypeCaches(animated_splash_screen._splashType);
+  dart.setLibraryUri(animated_splash_screen._splashType, I[0]);
+  dart.setFieldSignature(animated_splash_screen._splashType, () => ({
+    __proto__: dart.getFields(animated_splash_screen._splashType.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(animated_splash_screen._splashType, ['toString']);
+  animated_splash_screen._splashType.simpleSplash = C[0] || CT.C0;
+  animated_splash_screen._splashType.backgroundScreenReturn = C[1] || CT.C1;
+  animated_splash_screen._splashType.values = C[2] || CT.C2;
+  animated_splash_screen.SplashTransition = class SplashTransition extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (animated_splash_screen.SplashTransition.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = animated_splash_screen.SplashTransition.prototype;
+  dart.addTypeTests(animated_splash_screen.SplashTransition);
+  dart.addTypeCaches(animated_splash_screen.SplashTransition);
+  dart.setLibraryUri(animated_splash_screen.SplashTransition, I[0]);
+  dart.setFieldSignature(animated_splash_screen.SplashTransition, () => ({
+    __proto__: dart.getFields(animated_splash_screen.SplashTransition.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(animated_splash_screen.SplashTransition, ['toString']);
+  animated_splash_screen.SplashTransition.slideTransition = C[3] || CT.C3;
+  animated_splash_screen.SplashTransition.scaleTransition = C[4] || CT.C4;
+  animated_splash_screen.SplashTransition.rotationTransition = C[5] || CT.C5;
+  animated_splash_screen.SplashTransition.sizeTransition = C[6] || CT.C6;
+  animated_splash_screen.SplashTransition.fadeTransition = C[7] || CT.C7;
+  animated_splash_screen.SplashTransition.decoratedBoxTransition = C[8] || CT.C8;
+  animated_splash_screen.SplashTransition.values = C[9] || CT.C9;
+  var transitionType$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.transitionType");
+  var splashTransition$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.splashTransition");
+  var $function$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.function");
+  var customAnimation$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.customAnimation");
+  var backgroundColor$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.backgroundColor");
+  var nextScreen$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.nextScreen");
+  var type$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.type");
+  var centered$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.centered");
+  var disableNavigation$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.disableNavigation");
+  var splash$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.splash");
+  var duration$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.duration");
+  var curve$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.curve");
+  var animationDuration$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.animationDuration");
+  var splashIconSize$ = dart.privateName(animated_splash_screen, "AnimatedSplashScreen.splashIconSize");
+  var Cubic_d = dart.privateName(curves, "Cubic.d");
+  var Cubic_c = dart.privateName(curves, "Cubic.c");
+  var Cubic_b = dart.privateName(curves, "Cubic.b");
+  var Cubic_a = dart.privateName(curves, "Cubic.a");
+  var Color_value = dart.privateName(ui, "Color.value");
+  animated_splash_screen.AnimatedSplashScreen = class AnimatedSplashScreen extends framework.StatefulWidget {
+    get transitionType() {
+      return this[transitionType$];
+    }
+    set transitionType(value) {
+      super.transitionType = value;
+    }
+    get splashTransition() {
+      return this[splashTransition$];
+    }
+    set splashTransition(value) {
+      super.splashTransition = value;
+    }
+    get function() {
+      return this[$function$];
+    }
+    set function(value) {
+      super.function = value;
+    }
+    get customAnimation() {
+      return this[customAnimation$];
+    }
+    set customAnimation(value) {
+      super.customAnimation = value;
+    }
+    get backgroundColor() {
+      return this[backgroundColor$];
+    }
+    set backgroundColor(value) {
+      super.backgroundColor = value;
+    }
+    get nextScreen() {
+      return this[nextScreen$];
+    }
+    set nextScreen(value) {
+      super.nextScreen = value;
+    }
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      super.type = value;
+    }
+    get centered() {
+      return this[centered$];
+    }
+    set centered(value) {
+      super.centered = value;
+    }
+    get disableNavigation() {
+      return this[disableNavigation$];
+    }
+    set disableNavigation(value) {
+      super.disableNavigation = value;
+    }
+    get splash() {
+      return this[splash$];
+    }
+    set splash(value) {
+      super.splash = value;
+    }
+    get duration() {
+      return this[duration$];
+    }
+    set duration(value) {
+      super.duration = value;
+    }
+    get curve() {
+      return this[curve$];
+    }
+    set curve(value) {
+      super.curve = value;
+    }
+    get animationDuration() {
+      return this[animationDuration$];
+    }
+    set animationDuration(value) {
+      super.animationDuration = value;
+    }
+    get splashIconSize() {
+      return this[splashIconSize$];
+    }
+    set splashIconSize(value) {
+      super.splashIconSize = value;
+    }
+    static new(opts) {
+      let t0, t0$;
+      let curve = opts && 'curve' in opts ? opts.curve : C[10] || CT.C10;
+      let $function = opts && 'function' in opts ? opts.function : null;
+      let duration = opts && 'duration' in opts ? opts.duration : 2500;
+      let splash = opts && 'splash' in opts ? opts.splash : null;
+      let nextScreen = opts && 'nextScreen' in opts ? opts.nextScreen : null;
+      let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : C[11] || CT.C11;
+      let customTween = opts && 'customTween' in opts ? opts.customTween : null;
+      let centered = opts && 'centered' in opts ? opts.centered : true;
+      let disableNavigation = opts && 'disableNavigation' in opts ? opts.disableNavigation : false;
+      let splashTransition = opts && 'splashTransition' in opts ? opts.splashTransition : null;
+      let pageTransitionType = opts && 'pageTransitionType' in opts ? opts.pageTransitionType : null;
+      let animationDuration = opts && 'animationDuration' in opts ? opts.animationDuration : null;
+      let splashIconSize = opts && 'splashIconSize' in opts ? opts.splashIconSize : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      return new animated_splash_screen.AnimatedSplashScreen._internal({backgroundColor: backgroundColor, animationDuration: animationDuration, transitionType: (t0 = pageTransitionType, t0 == null ? $enum.PageTransitionType.bottomToTop : t0), splashTransition: (t0$ = splashTransition, t0$ == null ? animated_splash_screen.SplashTransition.fadeTransition : t0$), splashIconSize: splashIconSize, customAnimation: customTween, function: $function, duration: duration, centered: centered, disableNavigation: disableNavigation, splash: splash, type: animated_splash_screen._splashType.simpleSplash, nextScreen: nextScreen, curve: curve, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    }
+    static withScreenFunction(opts) {
+      let t0, t0$;
+      let curve = opts && 'curve' in opts ? opts.curve : C[10] || CT.C10;
+      let centered = opts && 'centered' in opts ? opts.centered : true;
+      let disableNavigation = opts && 'disableNavigation' in opts ? opts.disableNavigation : false;
+      let duration = opts && 'duration' in opts ? opts.duration : 2500;
+      let splash = opts && 'splash' in opts ? opts.splash : null;
+      let screenFunction = opts && 'screenFunction' in opts ? opts.screenFunction : null;
+      let customTween = opts && 'customTween' in opts ? opts.customTween : null;
+      let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : C[11] || CT.C11;
+      let splashTransition = opts && 'splashTransition' in opts ? opts.splashTransition : null;
+      let pageTransitionType = opts && 'pageTransitionType' in opts ? opts.pageTransitionType : null;
+      let animationDuration = opts && 'animationDuration' in opts ? opts.animationDuration : null;
+      let splashIconSize = opts && 'splashIconSize' in opts ? opts.splashIconSize : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      return new animated_splash_screen.AnimatedSplashScreen._internal({type: animated_splash_screen._splashType.backgroundScreenReturn, animationDuration: animationDuration, transitionType: (t0 = pageTransitionType, t0 == null ? $enum.PageTransitionType.bottomToTop : t0), splashTransition: (t0$ = splashTransition, t0$ == null ? animated_splash_screen.SplashTransition.fadeTransition : t0$), backgroundColor: backgroundColor, splashIconSize: splashIconSize, customAnimation: customTween, function: screenFunction, duration: duration, centered: centered, disableNavigation: disableNavigation, nextScreen: null, splash: splash, curve: curve, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    }
+    createState() {
+      return new animated_splash_screen._AnimatedSplashScreenState.new();
+    }
+  };
+  (animated_splash_screen.AnimatedSplashScreen._internal = function(opts) {
+    let animationDuration = opts && 'animationDuration' in opts ? opts.animationDuration : null;
+    let splashTransition = opts && 'splashTransition' in opts ? opts.splashTransition : null;
+    let customAnimation = opts && 'customAnimation' in opts ? opts.customAnimation : null;
+    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
+    let transitionType = opts && 'transitionType' in opts ? opts.transitionType : null;
+    let splashIconSize = opts && 'splashIconSize' in opts ? opts.splashIconSize : null;
+    let nextScreen = opts && 'nextScreen' in opts ? opts.nextScreen : null;
+    let $function = opts && 'function' in opts ? opts.function : null;
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    let centered = opts && 'centered' in opts ? opts.centered : null;
+    let disableNavigation = opts && 'disableNavigation' in opts ? opts.disableNavigation : null;
+    let splash = opts && 'splash' in opts ? opts.splash : null;
+    let curve = opts && 'curve' in opts ? opts.curve : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[animationDuration$] = animationDuration;
+    this[splashTransition$] = splashTransition;
+    this[customAnimation$] = customAnimation;
+    this[backgroundColor$] = backgroundColor;
+    this[transitionType$] = transitionType;
+    this[splashIconSize$] = splashIconSize;
+    this[nextScreen$] = nextScreen;
+    this[$function$] = $function;
+    this[duration$] = duration;
+    this[centered$] = centered;
+    this[disableNavigation$] = disableNavigation;
+    this[splash$] = splash;
+    this[curve$] = curve;
+    this[type$] = type;
+    if (!(duration !== null)) dart.assertFailed("Duration cannot be null", I[1], 144, 16, "duration != null");
+    if (!(transitionType !== null)) dart.assertFailed("TransitionType cannot be null", I[1], 145, 16, "transitionType != null");
+    if (!(splashTransition !== null)) dart.assertFailed("SplashTransition cannot be null", I[1], 146, 16, "splashTransition != null");
+    if (!(curve !== null)) dart.assertFailed("Curve cannot be null", I[1], 147, 16, "curve != null");
+    animated_splash_screen.AnimatedSplashScreen.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = animated_splash_screen.AnimatedSplashScreen.prototype;
+  dart.addTypeTests(animated_splash_screen.AnimatedSplashScreen);
+  dart.addTypeCaches(animated_splash_screen.AnimatedSplashScreen);
+  dart.setMethodSignature(animated_splash_screen.AnimatedSplashScreen, () => ({
+    __proto__: dart.getMethods(animated_splash_screen.AnimatedSplashScreen.__proto__),
+    createState: dart.fnType(animated_splash_screen._AnimatedSplashScreenState, [])
+  }));
+  dart.setLibraryUri(animated_splash_screen.AnimatedSplashScreen, I[0]);
+  dart.setFieldSignature(animated_splash_screen.AnimatedSplashScreen, () => ({
+    __proto__: dart.getFields(animated_splash_screen.AnimatedSplashScreen.__proto__),
+    transitionType: dart.finalFieldType($enum.PageTransitionType),
+    splashTransition: dart.finalFieldType(animated_splash_screen.SplashTransition),
+    function: dart.finalFieldType(dart.nullable(dart.fnType(async.Future, []))),
+    customAnimation: dart.finalFieldType(dart.nullable(tween.Animatable)),
+    backgroundColor: dart.finalFieldType(ui.Color),
+    nextScreen: dart.finalFieldType(dart.nullable(framework.Widget)),
+    type: dart.finalFieldType(animated_splash_screen._splashType),
+    centered: dart.finalFieldType(core.bool),
+    disableNavigation: dart.finalFieldType(core.bool),
+    splash: dart.finalFieldType(dart.dynamic),
+    duration: dart.finalFieldType(core.int),
+    curve: dart.finalFieldType(curves.Curve),
+    animationDuration: dart.finalFieldType(dart.nullable(core.Duration)),
+    splashIconSize: dart.finalFieldType(dart.nullable(core.double))
+  }));
+  var ___AnimatedSplashScreenState__animationController = dart.privateName(animated_splash_screen, "_#_AnimatedSplashScreenState#_animationController");
+  var ___AnimatedSplashScreenState__animation = dart.privateName(animated_splash_screen, "_#_AnimatedSplashScreenState#_animation");
+  var _animationController = dart.privateName(animated_splash_screen, "_animationController");
+  var _animation = dart.privateName(animated_splash_screen, "_animation");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  const State_SingleTickerProviderStateMixin$36 = class State_SingleTickerProviderStateMixin extends framework.State$(animated_splash_screen.AnimatedSplashScreen) {};
+  (State_SingleTickerProviderStateMixin$36.new = function() {
+    ticker_provider.SingleTickerProviderStateMixin$(animated_splash_screen.AnimatedSplashScreen)[dart.mixinNew].call(this);
+    State_SingleTickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_SingleTickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_SingleTickerProviderStateMixin$36, ticker_provider.SingleTickerProviderStateMixin$(animated_splash_screen.AnimatedSplashScreen));
+  animated_splash_screen._AnimatedSplashScreenState = class _AnimatedSplashScreenState extends State_SingleTickerProviderStateMixin$36 {
+    get [_animationController]() {
+      let t0;
+      t0 = this[___AnimatedSplashScreenState__animationController];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_animationController")) : t0;
+    }
+    set [_animationController](t0) {
+      this[___AnimatedSplashScreenState__animationController] = t0;
+    }
+    static get _context() {
+      let t1;
+      t1 = animated_splash_screen._AnimatedSplashScreenState['_#_context'];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_context")) : t1;
+    }
+    static set _context(t1) {
+      animated_splash_screen._AnimatedSplashScreenState['_#_context'] = t1;
+    }
+    get [_animation]() {
+      let t2;
+      t2 = this[___AnimatedSplashScreenState__animation];
+      return t2 == null ? dart.throw(new _internal.LateError.fieldNI("_animation")) : t2;
+    }
+    set [_animation](t2) {
+      this[___AnimatedSplashScreenState__animation] = t2;
+    }
+    get w() {
+      return this.widget;
+    }
+    initState() {
+      let t3, t3$;
+      super.initState();
+      this[_animationController] = new animation_controller.AnimationController.new({duration: (t3 = this.w.animationDuration, t3 == null ? new core.Duration.new({milliseconds: 800}) : t3), vsync: this});
+      let animation = (t3$ = this.w.customAnimation, t3$ == null ? tween.Animatable.as(dart.fn(() => {
+        switch (this.w.splashTransition) {
+          case C[3] || CT.C3:
+          {
+            return new (T.TweenOfOffset()).new({end: ui.Offset.zero, begin: new ui.Offset.new(1.0, 0.0)});
+          }
+          case C[8] || CT.C8:
+          {
+            return new implicit_animations.DecorationTween.new({end: new box_decoration.BoxDecoration.new({color: colors.Colors.black87}), begin: new box_decoration.BoxDecoration.new({color: colors.Colors.redAccent})});
+          }
+          default:
+          {
+            return new (T.TweenOfdouble()).new({begin: 0.0, end: 1.0});
+          }
+        }
+      }, T.VoidToObject())()) : t3$);
+      this[_animation] = animation.animate(new animations.CurvedAnimation.new({parent: this[_animationController], curve: this.w.curve}));
+      this[_animationController].forward().then(dart.dynamic, dart.fn(value => this.doTransition(), T.voidTodynamic()));
+    }
+    doTransition() {
+      return async.async(dart.dynamic, (function* doTransition() {
+        if (this.w.type === animated_splash_screen._splashType.backgroundScreenReturn)
+          this.navigator(yield dart.nullCheck(this.w.function)());
+        else if (!this.w.disableNavigation) this.navigator(this.w.nextScreen);
+      }).bind(this));
+    }
+    dispose() {
+      this[_animationController].reset();
+      this[_animationController].dispose();
+      super.dispose();
+    }
+    navigator(screen) {
+      async.Future.delayed(new core.Duration.new({milliseconds: this.w.duration < 100 ? 100 : this.w.duration})).then(core.Null, dart.fn(_ => {
+        try {
+          navigator.Navigator.of(animated_splash_screen._AnimatedSplashScreenState._context).pushReplacement(dart.dynamic, T.ObjectN(), new page_transition.PageTransition.new({type: this.w.transitionType, child: framework.Widget.as(screen)}));
+        } catch (e) {
+          let msg = dart.getThrown(e);
+          if (core.Object.is(msg)) {
+            core.print("AnimatedSplashScreen -> " + "error in jump to next screen, probably " + "this run is in hot reload: " + dart.str(msg));
+          } else
+            throw e;
+        }
+      }, T.dynamicToNull()));
+    }
+    getSplash() {
+      let t4;
+      let size = (t4 = this.w.splashIconSize, t4 == null ? media_query.MediaQuery.of(this.context).size.shortestSide * 0.2 : t4);
+      const main = opts => {
+        let child = opts && 'child' in opts ? opts.child : null;
+        return this.w.centered ? new basic.Center.new({child: child, $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}) : child;
+      };
+      dart.fn(main, T.__ToWidget());
+      return this.getTransition({child: main({child: new basic.SizedBox.new({height: size, child: T.WidgetN().as(typeof this.w.splash == 'string' ? dart.fn(Widget => {
+              if (dart.toString(this.w.splash)[$contains]("[n]"))
+                return new image.Image.network(dart.toString(this.w.splash)[$replaceAll]("[n]", ""), {$creationLocationd_0dea112b090073317d4: C[15] || CT.C15});
+              else
+                return new image.Image.asset(core.String.as(this.w.splash), {$creationLocationd_0dea112b090073317d4: C[18] || CT.C18});
+            }, T.VoidToImage())(dart.dynamic) : icon_data.IconData.is(this.w.splash) ? new icon.Icon.new(T.IconDataN().as(this.w.splash), {size: size, $creationLocationd_0dea112b090073317d4: C[21] || CT.C21}) : this.w.splash), $creationLocationd_0dea112b090073317d4: C[25] || CT.C25})})});
+    }
+    getTransition(opts) {
+      let child = opts && 'child' in opts ? opts.child : null;
+      switch (this.w.splashTransition) {
+        case C[3] || CT.C3:
+        {
+          return new transitions.SlideTransition.new({position: T.AnimationOfOffset().as(this[_animation]), child: child, $creationLocationd_0dea112b090073317d4: C[29] || CT.C29});
+          break;
+        }
+        case C[4] || CT.C4:
+        {
+          return new transitions.ScaleTransition.new({scale: T.AnimationOfdouble().as(this[_animation]), child: child, $creationLocationd_0dea112b090073317d4: C[33] || CT.C33});
+          break;
+        }
+        case C[5] || CT.C5:
+        {
+          return new transitions.RotationTransition.new({turns: T.AnimationOfdouble().as(this[_animation]), child: child, $creationLocationd_0dea112b090073317d4: C[37] || CT.C37});
+          break;
+        }
+        case C[6] || CT.C6:
+        {
+          return new transitions.SizeTransition.new({sizeFactor: T.AnimationOfdouble().as(this[_animation]), child: child, $creationLocationd_0dea112b090073317d4: C[41] || CT.C41});
+          break;
+        }
+        case C[7] || CT.C7:
+        {
+          return new transitions.FadeTransition.new({opacity: T.AnimationOfdouble().as(this[_animation]), child: child, $creationLocationd_0dea112b090073317d4: C[45] || CT.C45});
+          break;
+        }
+        case C[8] || CT.C8:
+        {
+          return new transitions.DecoratedBoxTransition.new({decoration: T.AnimationOfDecoration().as(this[_animation]), child: child, $creationLocationd_0dea112b090073317d4: C[49] || CT.C49});
+          break;
+        }
+        default:
+        {
+          return new transitions.FadeTransition.new({opacity: T.AnimationOfdouble().as(this[_animation]), child: child, $creationLocationd_0dea112b090073317d4: C[53] || CT.C53});
+          break;
+        }
+      }
+    }
+    build(context) {
+      animated_splash_screen._AnimatedSplashScreenState._context = context;
+      return new scaffold.Scaffold.new({backgroundColor: this.w.backgroundColor, body: this.getSplash(), $creationLocationd_0dea112b090073317d4: C[57] || CT.C57});
+    }
+  };
+  (animated_splash_screen._AnimatedSplashScreenState.new = function() {
+    this[___AnimatedSplashScreenState__animationController] = null;
+    this[___AnimatedSplashScreenState__animation] = null;
+    animated_splash_screen._AnimatedSplashScreenState.__proto__.new.call(this);
+    ;
+  }).prototype = animated_splash_screen._AnimatedSplashScreenState.prototype;
+  dart.addTypeTests(animated_splash_screen._AnimatedSplashScreenState);
+  dart.addTypeCaches(animated_splash_screen._AnimatedSplashScreenState);
+  dart.setMethodSignature(animated_splash_screen._AnimatedSplashScreenState, () => ({
+    __proto__: dart.getMethods(animated_splash_screen._AnimatedSplashScreenState.__proto__),
+    doTransition: dart.fnType(dart.dynamic, []),
+    navigator: dart.fnType(dart.dynamic, [dart.dynamic]),
+    getSplash: dart.fnType(framework.Widget, []),
+    getTransition: dart.fnType(framework.Widget, [], {}, {child: framework.Widget}),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(animated_splash_screen._AnimatedSplashScreenState, () => ({
+    __proto__: dart.getGetters(animated_splash_screen._AnimatedSplashScreenState.__proto__),
+    [_animationController]: animation_controller.AnimationController,
+    [_animation]: animation.Animation,
+    w: animated_splash_screen.AnimatedSplashScreen
+  }));
+  dart.setSetterSignature(animated_splash_screen._AnimatedSplashScreenState, () => ({
+    __proto__: dart.getSetters(animated_splash_screen._AnimatedSplashScreenState.__proto__),
+    [_animationController]: animation_controller.AnimationController,
+    [_animation]: animation.Animation
+  }));
+  dart.setLibraryUri(animated_splash_screen._AnimatedSplashScreenState, I[0]);
+  dart.setFieldSignature(animated_splash_screen._AnimatedSplashScreenState, () => ({
+    __proto__: dart.getFields(animated_splash_screen._AnimatedSplashScreenState.__proto__),
+    [___AnimatedSplashScreenState__animationController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [___AnimatedSplashScreenState__animation]: dart.fieldType(dart.nullable(animation.Animation))
+  }));
+  dart.defineLazy(animated_splash_screen._AnimatedSplashScreenState, {
+    /*animated_splash_screen._AnimatedSplashScreenState['_#_context']*/get ['_#_context']() {
+      return null;
+    },
+    set ['_#_context'](_) {}
+  }, false);
+  dart.trackLibraries("packages/animated_splash_screen/animated_splash_screen.dart", {
+    "package:animated_splash_screen/animated_splash_screen.dart": animated_splash_screen
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["animated_splash_screen.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAMwD;;4DAAnD;;;;EAAmD;;;;;;;;;;;;;;;;IASxD;;iEARK;;;;EAQL;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAI2B;;;;;;IAGF;;;;;;IAIE;;;;;;IAGP;;;;;;IAGN;;;;;;IAIE;;;;;;IAGI;;;;;;IAGP;;;;;;IAKA;;;;;;IAKG;;;;;;IAIJ;;;;;;IAGE;;;;;;IAGI;;;;;;IAGF;;;;;;;;UAGH;UACY;UACf;UACa;UACD;UACV;UACM;UACP;UACA;UACa;UACE;UACV;UACF;;AACV,YAA4B,6EACP,eAAe,qBACb,iBAAiB,mBACD,KAAnB,kBAAkB,EAAlB,aAAyC,+DACtB,MAAjB,gBAAgB,EAAhB,cAAqC,+EACvC,cAAc,mBACb,WAAW,YAClB,qBACA,QAAQ,YACR,QAAQ,qBACC,iBAAiB,UAC5B,MAAM,QACI,6DACN,UAAU,SACf,KAAK;IAClB;;;UAGW;UACF;UACA;UACD;UACa;UACkB;UACvB;UACN;UACY;UACE;UACV;UACF;;AACV,YAA4B,kEACN,8EACC,iBAAiB,mBACD,KAAnB,kBAAkB,EAAlB,aAAyC,+DACtB,MAAjB,gBAAgB,EAAhB,cAAqC,gFACtC,eAAe,kBAChB,cAAc,mBACb,WAAW,YAClB,cAAc,YACd,QAAQ,YACR,QAAQ,qBACC,iBAAiB,cACxB,cACJ,MAAM,SACP,KAAK;IAClB;;AAuB4C;IAA4B;;;QApBxD;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;QACA;;IAbA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;UACH,AAAS,QAAD,8BAAU;UAClB,AAAe,cAAD,8BAAU;UACxB,AAAiB,gBAAD,8BAAU;UAC1B,AAAM,KAAD,8BAAU;AAlB5B;;EAkBmD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAQ1B;;IAAoB;;AAApB;IAAoB;;;AACpB;;IAAQ;;AAAR;IAAQ;;;AAClB;;IAAU;;AAAV;IAAU;;AAEK;IAAM;;;AAIjB,MAAX;AAIU,MAFhB,6BAA2B,6DACO,KAApB,AAAE,0BAAA,aAAqB,qCAAuB,oBACjD;AAEA,uBAA8B,MAAlB,AAAE,wBAAA,cAiBjB,oBAhBJ,AAgBC;AAfC,gBAAQ,AAAE;;;AAEN,kBAAO,mCACO,uBACL,kBAAO,KAAG;;;;AAInB,kBAAO,mDACE,6CAA4B,gCAC1B,6CAA4B;;;;AAGvC,kBAAO,qCAAa,UAAU;;;;AAKmC,MAD3E,mBAAa,AACR,SADiB,SACT,4CAAwB,mCAA6B,AAAE;AACN,MAA9D,AAAqB,AAAU,wDAAK,QAAC,SAAU;IACjD;;AAGY;AACV,YAAI,AAAE,AAAK,gBAAe;AACM,UAA9B,eAAU,MAAgB,AAAC,eAAX,AAAE;YACf,MAAK,AAAE,0BAAmB,AAAuB,eAAb,AAAE;MAC7C;;;AAI8B,MAA5B,AAAqB;AACS,MAA9B,AAAqB;AACN,MAAT;IACR;cAEU;AAWN,MAVK,AACF,qBADU,qCAAuB,AAAE,AAAS,kBAAE,MAAM,MAAM,AAAE,mCACvD,QAAC;AACT;AAE4D,UADhD,AAAa,uBAAV,uGACT,8CAAqB,AAAE,kDAAuB,MAAM;;cACjD;AAAP;AAGsC,YAFtC,WAAK,AAAC,6BACF,4CACA,yCAA6B,GAAG;;;;;IAG1C;;;AAIQ,kBACe,KAAjB,AAAE,uBAAA,aAA6B,AAAY,AAAK,AAAa,0BAA3B,kCAA6B;AAEnE,YAAO;YAAsB;AACzB,cAAA,AAAE,mBAAW,6BAAc,KAAK,8DAAI,KAAK;;;AAE7C,YAAO,4BACI,IAAI,SACA,gCACK,IAAI,SAER,eADY,OAAT,AAAE,4BACK,AAMP;AALC,kBAAa,AAAW,cAApB,AAAE,0BAA2B;AAC/B,sBAAa,yBACA,AAAW,cAApB,AAAE,4BAA6B,OAAO;;AAE1C,sBAAa,sCAAM,AAAE;gDAEf,sBAAT,AAAE,iBACC,mCAAK,AAAE,uBAAc,IAAI,8DACzB,AAAE;IAC1B;;UAGsC;AACpC,cAAQ,AAAE;;;AAEN,gBAAO,gDACmB,yBAAX,0BAAyC,KAAK;AAC7D;;;;AAGA,gBAAO,6CACgB,yBAAX,0BAAyC,KAAK;AAC1D;;;;AAGA,gBAAO,gDACgB,yBAAX,0BAAyC,KAAK;AAC1D;;;;AAGA,gBAAO,iDACqB,yBAAX,0BAAyC,KAAK;AAC/D;;;;AAGA,gBAAO,8CACkB,yBAAX,0BAAyC,KAAK;AAC5D;;;;AAGA,gBAAO,yDACqB,6BAAX,0BAA6C,KAAK;AACnE;;;;AAGA,gBAAO,8CACkB,yBAAX,0BAAyC,KAAK;AAC5D;;;IAEN;UAG0B;AACN,MAAlB,6DAAW,OAAO;AAElB,YAAO,6CAA0B,AAAE,8BAAuB;IAC5D;;;8DAxIyB;oDAEV;;;EAuIjB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MAxI2B,+DAAU;YAAV","file":"../../../../../../../packages/animated_splash_screen/animated_splash_screen.dart.lib.js"}');
+  // Exports:
+  return {
+    animated_splash_screen: animated_splash_screen
+  };
+}));
+
+//# sourceMappingURL=animated_splash_screen.dart.lib.js.map
