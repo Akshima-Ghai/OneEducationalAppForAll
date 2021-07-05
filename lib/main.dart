@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:one_edu_app_for_all/home_page.dart';
+import 'package:one_edu_app_for_all/Main_page.dart';
 import 'package:one_edu_app_for_all/login_page.dart';
 
 void main() {
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.green //color
           ),
       routes: {
-        'app/home': (context) => home(),
+        'app/home': (context) => MainPage(),
         'app/login': (context) => login(),
       },
     );

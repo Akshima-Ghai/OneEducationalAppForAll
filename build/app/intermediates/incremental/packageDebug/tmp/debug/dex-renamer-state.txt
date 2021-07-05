@@ -1,4 +1,4 @@
-#Fri Jul 02 19:26:29 IST 2021
+#Sun Jul 04 17:12:20 IST 2021
 base.0=/home/amartyanambiar/Desktop/OneEducationalAppForAll/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
