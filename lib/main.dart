@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:one_edu_app_for_all/Main_page.dart';
+import 'package:one_edu_app_for_all/UI_User.dart';
 
 
 
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             "assets/images/temporary.png", //Input the path of the image
             // width, height can be used to alter
           ),
-          nextScreen: home(),
+          nextScreen: UI_USER(),
           
           splashTransition:
               SplashTransition.fadeTransition, //type of transition
